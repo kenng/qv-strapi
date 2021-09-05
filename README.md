@@ -1,6 +1,6 @@
 # Strapi plugin vuejs and Quasar Project
 
- 
+
 <br>
 
 ## Install
@@ -18,7 +18,7 @@ yarn add @aysnet/qv-strapi
 
 ### New instance
 ##### Vuejs
-```js 
+```js
 import Vue from 'vue';
 import App from "./App.vue";
 import Strapi from '@aysnet/qv-strapi';
@@ -35,17 +35,15 @@ const  options = {
     },
     requestConfig: '',
 }
+
+const app = createApp(App);
+
 const strapi = new Strapi(options)
-
-Vue.prototype.$strapi = strapi;
-
-new Vue({
-  render: (h) => h(App, strapi)
-}).$mount("#app");
+app.config.globalProperties.$strapi = strapi;
 ```
 ---
 ##### Quasar Project [boot/strapi.js]
-```js 
+```js
 import Vue from 'vue'
 import Strapi from '@aysnet/qv-strapi';
 
@@ -69,7 +67,7 @@ export default ({
 }) => {
   Vue.prototype.$strapi = strapi
 }
- 
+
 
 export {
   strapi
@@ -251,7 +249,7 @@ const files = await strapi.upload(form, {
 ### `findFiles(params)`
 ### `findFile(id)`
 ### `upload(data)`
-##### `graphql(query)` 
+##### `graphql(query)`
 ###### exemple query qraphql:
 ```js
  const DataQuery =  await this.$strapi.graphql({
