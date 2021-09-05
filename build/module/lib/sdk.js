@@ -1,7 +1,7 @@
 import axios from 'axios';
 import * as Cookies from 'js-cookie';
 import * as qs from 'qs';
-import Vue from 'vue';
+import { reactive } from 'vue';
 export default class Strapi {
     /**
      * Default constructor.
@@ -13,7 +13,7 @@ export default class Strapi {
         const baseURL = this.options.url || 'http://localhost:1337';
         const requestConfig = this.options.requestConfig;
         const storeConfig = this.options.storeConfig;
-        this.state = Vue.observable({
+        this.state = reactive({
             user: null,
         });
         this.axios = axios.create({
@@ -53,7 +53,7 @@ export default class Strapi {
         return this.state.user;
     }
     set user(user) {
-        Vue.set(this.state, 'user', user);
+        this.state['user'] = user;
     }
     /**
      * Axios request
