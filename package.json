@@ -1,0 +1,20 @@
+{
+  "name": "@aysnet/qv-strapi",
+  "version": "1.0.2",
+  "description": "Strapi plugin vuejs and quasar project",
+  "main": "build/main/index.js",
+  "typings": "build/main/index.d.ts",
+  "module": "build/module/index.js",
+  "repository": "https://github.com/aysnet1/qv-strapi",
+  "license": "MIT",
+  "keywords": ["strapi","cms","vuejs","vue","quasar","plugin"],
+  "engines": {
+    "node": ">=10"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "js-cookie": "^2.2.1",
+    "qs": "^6.9.2"
+  } 
+
+}
