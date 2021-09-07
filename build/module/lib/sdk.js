@@ -2,6 +2,7 @@ import axios from 'axios';
 import * as Cookies from 'js-cookie';
 import * as qs from 'qs';
 import { reactive } from 'vue';
+import StrapiHTTPError from './StrapiHTTPError';
 export default class Strapi {
     /**
      * Default constructor.
