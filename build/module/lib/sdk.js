@@ -71,7 +71,7 @@ export default class Strapi {
             return response.data;
         } catch (error) {
             if (error.response) {
-                throw new Error(error.response.data.message);
+                throw new StrapiHTTPError(error);
             } else {
                 throw error;
             }
